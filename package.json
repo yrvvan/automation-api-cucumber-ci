@@ -1,0 +1,28 @@
+{
+  "name": "cucumber-automation-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test-gorest": "node helpers/get_cases.js gorest 30 && npx cucumber-js gorest/features --tags 'not @skip' -f 'html:report/gorest.html' -f 'progress:report/gorest.txt'",
+    "test-marketplace": "node helpers/get_cases.js marketplace_aggregator 29 && npx cucumber-js marketplace_aggregator/features --tags 'not @skip' -f 'html:report/cucumber-marketplace-aggregator.html' -f 'progress:report/cucumber-marketplace-aggregator.txt'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cucumber/pretty-formatter": "^1.0.1",
+    "axios": "^1.7.2",
+    "chai-json-schema": "^1.5.1",
+    "cucumber": "^6.0.7",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "fs": "^0.0.1-security",
+    "jsonpath": "^1.1.1",
+    "supertest": "^7.0.0",
+    "supertest-with-proxy": "^5.0.2"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7"
+  }
+}
