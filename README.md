@@ -36,36 +36,23 @@ This project demonstrates how to automate API testing using Cucumber and JavaScr
         │    └── api_steps.js
         │    └── ...
         │
-        ├── page
+        │  ├── request_page/ # Step definitions (test logic)
+        │    └── api_serve.js
+        │    └── ...
+        │
+        │  ├── schema/ # Step definitions (test logic)
+        │    └── ..._schema.js
+        │    └── ...
+        │
+        │  ├── data/ # Step definitions (test logic)
+        │    └── ..._data.js
+        │    └── ...
+        │
+        │  ├── helpers/ # Step definitions (test logic)
+        │    └── get_cases.js
+        │    └── ...
+        │
         ├── reports
-        │  └── mochawesome
-        ├── test
-        ├── .env
-        └── package.json
-
-│
-| ├── request_page/ # Step definitions (test logic)
-|    └── api_serve.js
-|    └── ...
-│
-| ├── schema/ # Step definitions (test logic)
-|    └── ..._schema.js
-|    └── ...
-│
-| ├── data/ # Step definitions (test logic)
-|    └── ..._data.js
-|    └── ...
-│
-├── helpers/ # Step definitions (test logic)
-│ ├── get_cases.js # Example step definitions
-│ └── ...
-│
-├── report/ # Support files (hooks, utilities)
-│ └── ...
-│
-├── package.json # Node.js dependencies and scripts
-└── ...
-
-
-
-
+        │  └── ...
+        ├── package.json
+        └── .env
