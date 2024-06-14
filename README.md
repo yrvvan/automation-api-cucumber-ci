@@ -27,15 +27,22 @@ This project demonstrates how to automate API testing using Cucumber and JavaScr
     - npm run test-gorest
 
 ### Directory Structure
-.
-│
-├── features/ # Feature files (test scenarios)
-│ ├── sample.feature # Example feature file
-|    └── ...
-│
-│ ├── step_definitions/ # Step definitions (test logic)
-|    └── api_steps.js
-|    └── ...
+        .
+        ├── features/ # Feature files (test scenarios)
+        │  ├── sample.feature # Example feature file
+        │  └── ...
+        │
+        │  ├── step_definitions/ # Step definitions (test logic)
+        │    └── api_steps.js
+        │    └── ...
+        │
+        ├── page
+        ├── reports
+        │  └── mochawesome
+        ├── test
+        ├── .env
+        └── package.json
+
 │
 | ├── request_page/ # Step definitions (test logic)
 |    └── api_serve.js
