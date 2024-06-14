@@ -24,11 +24,10 @@ This project demonstrates how to automate API testing using Cucumber and JavaScr
     Write step definitions in JavaScript under the `step_definitions` directory to define the behavior for each step in the feature files.
 6. **Run tests**:
     Execute the tests using the following command:
+    - npm run test-gorest
 
-## Directory Structure
-- npm run test-gorest
-
-cucumber-automation-api/
+### Directory Structure
+.
 │
 ├── features/ # Feature files (test scenarios)
 │ ├── sample.feature # Example feature file
