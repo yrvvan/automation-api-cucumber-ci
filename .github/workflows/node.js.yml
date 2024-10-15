@@ -39,4 +39,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: automation-api-report-prd
-        path: /home/runner/work/automation-api-cucumber/automation-api-cucumber/reports/mochawesome
+        path: /home/runner/work/automation-api-cucumber/automation-api-cucumber/report
