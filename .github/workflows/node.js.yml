@@ -34,13 +34,9 @@ jobs:
         QASE_API: ${{ vars.QASE_API }}
         QASE_TOKEN: ${{ secrets.QASE_TOKEN }}
         TOKEN_GOREST: ${{ secrets.TOKEN_GOREST }}
-      run: |
-        npm run test-gorest
-        ls -la
-        cd report
-        pwd
+      run: npm run test-gorest
     - name: Archive Reports
       uses: actions/upload-artifact@v4
       with:
         name: automation-api-report-prd
-        path: /home/runner/work/automation-api-cucumber/report
+        path: /home/runner/work/automation-api-cucumber-ci/automation-api-cucumber-ci/report
