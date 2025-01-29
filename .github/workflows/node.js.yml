@@ -35,9 +35,9 @@ jobs:
         QASE_TOKEN: ${{ secrets.QASE_TOKEN }}
         TOKEN_GOREST: ${{ secrets.TOKEN_GOREST }}
       run: npm run test-gorest
+      run: ls -la
     - name: Archive Reports
       uses: actions/upload-artifact@v4
-      run: ls -la
       with:
         name: automation-api-report-prd
         path: /home/runner/work/automation-api-cucumber/report
