@@ -1,5 +1,5 @@
 require('dotenv').config();
-const supertestProxy = require('supertest-with-proxy');
+const supertestProxy = require('supertest');
 const url = process.env.URL_GOREST;
 const api = supertestProxy(url);
 

@@ -2,6 +2,7 @@ const chai = require('chai');
 var jp = require('jsonpath');
 const { expect } = require('chai');
 chai.use(require('chai-json-schema'));
+const faker = require('@faker-js/faker').faker;
 const { Given, When, Then } = require('@cucumber/cucumber');
 
 const app = require('../request_page/api_serve');
@@ -17,13 +18,19 @@ When('I send a {string} request to {string} with path {string} and parameters:',
     // Convert headers and parameters strings to JSON
     const paramsObj = JSON.parse(params);
     const headersObj = paramsObj.headers;
-    const parametersObj = paramsObj.parameters;
+    let parametersObj = paramsObj.parameters;
 
     // Add authorization if the endpoint accessed from external
     server === 'external' && (headersObj['Authorization'] = `Bearer ${token}`);
 
     // Determine the appropriate method and call the API function accordingly
-    response = await (method === 'GET' ? app.getAPI(path, headersObj, parametersObj) : app.postAPI(path, headersObj, parametersObj));
+    if (method === 'GET') {
+        response = await app.getAPI(path, headersObj, parametersObj);
+      } else {
+        parametersObj.email = faker.internet.email();
+        const parameters = JSON.stringify(parametersObj);
+        response = await app.postAPI(path, headersObj, parameters);
+      }
 });
 
 // Assert response status
