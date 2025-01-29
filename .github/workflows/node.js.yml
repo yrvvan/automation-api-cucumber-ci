@@ -34,8 +34,9 @@ jobs:
         QASE_API: ${{ vars.QASE_API }}
         QASE_TOKEN: ${{ secrets.QASE_TOKEN }}
         TOKEN_GOREST: ${{ secrets.TOKEN_GOREST }}
-      run: npm run test-gorest
-      run: ls -la
+      run: |
+        npm run test-gorest
+        ls -la
     - name: Archive Reports
       uses: actions/upload-artifact@v4
       with:
