@@ -37,6 +37,8 @@ jobs:
       run: |
         npm run test-gorest
         ls -la
+        cd report
+        pwd
     - name: Archive Reports
       uses: actions/upload-artifact@v4
       with:
